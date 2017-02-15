@@ -20,12 +20,13 @@ public class GameStateManager {
         states.push(state);
     }
 
+    //To prevent memory leak, dispose it.
     public void pop() {
-        states.pop();
+        states.pop().dispose();
     }
 
     public void set(State state) {
-        states.pop();
+        states.pop().dispose();
         states.push(state);
     }
 
